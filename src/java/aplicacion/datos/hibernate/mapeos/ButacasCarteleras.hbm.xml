@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aplicacion.datos.hibernate.mapeos.ButacasCarteleras" table="butacas_carteleras" catalog="cine" optimistic-lock="version">
+        <id name="bcCodigo" type="java.lang.Integer">
+            <column name="bc_codigo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="carteleras" class="aplicacion.datos.hibernate.mapeos.Carteleras" fetch="select">
+            <column name="bc_cartelera" not-null="true" />
+        </many-to-one>
+        <property name="bcIdentificadorButaca" type="string">
+            <column name="bc_identificador_butaca" length="10" not-null="true" />
+        </property>
+        <property name="bcDisponible" type="boolean">
+            <column name="bc_disponible" not-null="true" />
+        </property>
+        <property name="bcEstado" type="boolean">
+            <column name="bc_estado" not-null="true" />
+        </property>
+        <set name="ventasEntradases" table="ventas_entradas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ven_butaca" not-null="true" />
+            </key>
+            <one-to-many class="aplicacion.datos.hibernate.mapeos.VentasEntradas" />
+        </set>
+    </class>
+</hibernate-mapping>

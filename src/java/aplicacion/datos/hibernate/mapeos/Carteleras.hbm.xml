@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aplicacion.datos.hibernate.mapeos.Carteleras" table="carteleras" catalog="cine" optimistic-lock="version">
+        <id name="carCodigo" type="java.lang.Integer">
+            <column name="car_codigo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="peliculas" class="aplicacion.datos.hibernate.mapeos.Peliculas" fetch="select">
+            <column name="car_pelicula" not-null="true" />
+        </many-to-one>
+        <many-to-one name="salas" class="aplicacion.datos.hibernate.mapeos.Salas" fetch="select">
+            <column name="car_sala" not-null="true" />
+        </many-to-one>
+        <property name="carFecha" type="date">
+            <column name="car_fecha" length="10" not-null="true" />
+        </property>
+        <property name="carHorario" type="string">
+            <column name="car_horario" length="45" not-null="true" />
+        </property>
+        <property name="carPrecio" type="double">
+            <column name="car_precio" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="carEstado" type="boolean">
+            <column name="car_estado" not-null="true" />
+        </property>
+        <set name="preciosCartelerases" table="precios_carteleras" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pre_cartelera" not-null="true" />
+            </key>
+            <one-to-many class="aplicacion.datos.hibernate.mapeos.PreciosCarteleras" />
+        </set>
+        <set name="butacasCartelerases" table="butacas_carteleras" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="bc_cartelera" not-null="true" />
+            </key>
+            <one-to-many class="aplicacion.datos.hibernate.mapeos.ButacasCarteleras" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aplicacion.datos.hibernate.mapeos.PelCla" table="pel_cla" catalog="cine" optimistic-lock="version">
+        <id name="pcCodigo" type="java.lang.Integer">
+            <column name="pc_codigo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="clasificaciones" class="aplicacion.datos.hibernate.mapeos.Clasificaciones" fetch="select">
+            <column name="pc_clasificacion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="peliculas" class="aplicacion.datos.hibernate.mapeos.Peliculas" fetch="select">
+            <column name="pc_pelicula" not-null="true" />
+        </many-to-one>
+        <property name="pcEstado" type="boolean">
+            <column name="pc_estado" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
