@@ -10,14 +10,14 @@ public class Butacas  implements java.io.Serializable {
 
 
      private Integer butCodigo;
-     private Salas salas;
+     private Sala salas;
      private String butIdentificador;
      private boolean butEstado;
 
     public Butacas() {
     }
 
-    public Butacas(Salas salas, String butIdentificador, boolean butEstado) {
+    public Butacas(Sala salas, String butIdentificador, boolean butEstado) {
        this.salas = salas;
        this.butIdentificador = butIdentificador;
        this.butEstado = butEstado;
@@ -30,11 +30,11 @@ public class Butacas  implements java.io.Serializable {
     public void setButCodigo(Integer butCodigo) {
         this.butCodigo = butCodigo;
     }
-    public Salas getSalas() {
+    public Sala getSalas() {
         return this.salas;
     }
     
-    public void setSalas(Salas salas) {
+    public void setSalas(Sala salas) {
         this.salas = salas;
     }
     public String getButIdentificador() {

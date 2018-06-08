@@ -11,13 +11,13 @@ public class PelCla  implements java.io.Serializable {
 
      private Integer pcCodigo;
      private Clasificaciones clasificaciones;
-     private Peliculas peliculas;
+     private Pelicula peliculas;
      private boolean pcEstado;
 
     public PelCla() {
     }
 
-    public PelCla(Clasificaciones clasificaciones, Peliculas peliculas, boolean pcEstado) {
+    public PelCla(Clasificaciones clasificaciones, Pelicula peliculas, boolean pcEstado) {
        this.clasificaciones = clasificaciones;
        this.peliculas = peliculas;
        this.pcEstado = pcEstado;
@@ -37,11 +37,11 @@ public class PelCla  implements java.io.Serializable {
     public void setClasificaciones(Clasificaciones clasificaciones) {
         this.clasificaciones = clasificaciones;
     }
-    public Peliculas getPeliculas() {
+    public Pelicula getPeliculas() {
         return this.peliculas;
     }
     
-    public void setPeliculas(Peliculas peliculas) {
+    public void setPeliculas(Pelicula peliculas) {
         this.peliculas = peliculas;
     }
     public boolean isPcEstado() {

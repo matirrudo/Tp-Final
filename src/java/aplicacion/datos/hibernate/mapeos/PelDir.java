@@ -11,13 +11,13 @@ public class PelDir  implements java.io.Serializable {
 
      private Integer pdCodigo;
      private Directores directores;
-     private Peliculas peliculas;
+     private Pelicula peliculas;
      private boolean pdEstado;
 
     public PelDir() {
     }
 
-    public PelDir(Directores directores, Peliculas peliculas, boolean pdEstado) {
+    public PelDir(Directores directores, Pelicula peliculas, boolean pdEstado) {
        this.directores = directores;
        this.peliculas = peliculas;
        this.pdEstado = pdEstado;
@@ -37,11 +37,11 @@ public class PelDir  implements java.io.Serializable {
     public void setDirectores(Directores directores) {
         this.directores = directores;
     }
-    public Peliculas getPeliculas() {
+    public Pelicula getPeliculas() {
         return this.peliculas;
     }
     
-    public void setPeliculas(Peliculas peliculas) {
+    public void setPeliculas(Pelicula peliculas) {
         this.peliculas = peliculas;
     }
     public boolean isPdEstado() {
