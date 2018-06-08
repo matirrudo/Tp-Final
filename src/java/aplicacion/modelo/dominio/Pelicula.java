@@ -1,5 +1,6 @@
 package aplicacion.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ import java.util.Set;
  *
  * @author LENOVO
  */
-public class Pelicula {
+public class Pelicula implements Serializable{
 
     private Integer pelCodigo;
     private String pelNombre;

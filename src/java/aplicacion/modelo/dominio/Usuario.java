@@ -1,11 +1,13 @@
 
 package aplicacion.modelo.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author LENOVO
  */
-public class Usuario {
+public class Usuario implements Serializable{
     private Integer usuCodigo;
     private String usuNombreUsuario;
     private String usuPassword;

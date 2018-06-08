@@ -1,13 +1,14 @@
 
 package aplicacion.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author LENOVO
  */
-public class Perfil {
+public class Perfil implements Serializable{
     private Integer perCodigo;
      private Usuario usuario;
      private String perNombre;
