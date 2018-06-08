@@ -1,12 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Inicio Secion</title>
     </h:head>
     <h:body>
+        <center>
         
+        <h:form id="frmlogin">
+                <p:growl id="msj"/>
+                
+                <p:panel id="pnllogin" header="ACCESO AL SISTEMA DEL CINE" style="width: 500px;" footer="APU 2008 - Programacion Visual 2018">
+                <h:panelGrid id="tbllogin" columns="2" >
+                    <p:outputLabel for="txtusuario" value="USUARIO"/> 
+                    <p:inputText id="txtusuario" value="" required="true"
+                                 requiredMessage="Ingrese usuario"/>
+                    <p:outputLabel for="txtpassword" value="CONTRASEÑA"/>
+                    <p:password id="txtpassword" value="" required="true"
+                                 requiredMessage="Ingrese contraseña"/>
+                </h:panelGrid>    
+                    <p:commandButton id="btnvalidar" value="Validar usuario"
+                                     
+                                     update="msj"/>
+                </p:panel>    
+            </h:form>
+       </center>
     </h:body>
 </html>
 
