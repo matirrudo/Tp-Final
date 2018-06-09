@@ -8,7 +8,7 @@
             <column name="but_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="salas" class="aplicacion.datos.hibernate.mapeos.Salas" fetch="select">
+        <many-to-one name="sala" class="aplicacion.modelo.dominio.Sala" fetch="join">
             <column name="but_sala" not-null="true" />
         </many-to-one>
         <property name="butIdentificador" type="string">

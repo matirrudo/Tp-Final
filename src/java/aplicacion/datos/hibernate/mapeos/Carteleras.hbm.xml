@@ -3,15 +3,15 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.Carteleras" table="carteleras" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.Cartelera" table="carteleras" catalog="cine" optimistic-lock="version">
         <id name="carCodigo" type="java.lang.Integer">
             <column name="car_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="peliculas" class="aplicacion.datos.hibernate.mapeos.Peliculas" fetch="select">
+        <many-to-one name="pelicula" class="aplicacion.modelo.dominio.Pelicula" fetch="join">
             <column name="car_pelicula" not-null="true" />
         </many-to-one>
-        <many-to-one name="salas" class="aplicacion.datos.hibernate.mapeos.Salas" fetch="select">
+        <many-to-one name="sala" class="aplicacion.modelo.dominio.Sala" fetch="join">
             <column name="car_sala" not-null="true" />
         </many-to-one>
         <property name="carFecha" type="date">
@@ -30,13 +30,13 @@
             <key>
                 <column name="pre_cartelera" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.PreciosCarteleras" />
+            <one-to-many class="aplicacion.modelo.dominio.PrecioCartelera" />
         </set>
         <set name="butacasCartelerases" table="butacas_carteleras" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="bc_cartelera" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.ButacasCarteleras" />
+            <one-to-many class="aplicacion.modelo.dominio.ButacaCartelera" />
         </set>
     </class>
 </hibernate-mapping>

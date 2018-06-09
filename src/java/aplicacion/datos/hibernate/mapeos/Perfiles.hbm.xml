@@ -8,7 +8,7 @@
             <column name="per_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="usuarios" class="aplicacion.modelo.dominio.Usuario" fetch="join">
+        <many-to-one name="usuario" class="aplicacion.modelo.dominio.Usuario" fetch="join">
             <column name="per_usuario" not-null="true" />
         </many-to-one>
         <property name="perNombre" type="string">

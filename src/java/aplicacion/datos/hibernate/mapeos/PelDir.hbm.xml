@@ -3,15 +3,15 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.PelDir" table="pel_dir" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.PelDir" table="pel_dir" catalog="cine" optimistic-lock="version">
         <id name="pdCodigo" type="java.lang.Integer">
             <column name="pd_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="directores" class="aplicacion.datos.hibernate.mapeos.Directores" fetch="select">
+        <many-to-one name="directors" class="aplicacion.modelo.dominio.Director" fetch="join">
             <column name="pd_director" not-null="true" />
         </many-to-one>
-        <many-to-one name="peliculas" class="aplicacion.datos.hibernate.mapeos.Peliculas" fetch="select">
+        <many-to-one name="pelicula" class="aplicacion.modelo.dominio.Pelicula" fetch="join">
             <column name="pd_pelicula" not-null="true" />
         </many-to-one>
         <property name="pdEstado" type="boolean">

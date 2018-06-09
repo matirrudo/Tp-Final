@@ -16,23 +16,23 @@ import java.util.Set;
 public class Director implements Serializable {
 
     private Integer dirCodigo;
-    private String dirApellidos;
-    private String dirNombres;
+    private String dirApellido;
+    private String dirNombre;
     private boolean dirEstado;
     private Set pelDirs = new HashSet(0);
 
     public Director() {
     }
 
-    public Director(String dirApellidos, String dirNombres, boolean dirEstado) {
-        this.dirApellidos = dirApellidos;
-        this.dirNombres = dirNombres;
+    public Director(String dirApellido, String dirNombres, boolean dirEstado) {
+        this.dirApellido = dirApellido;
+        this.dirNombre = dirNombre;
         this.dirEstado = dirEstado;
     }
 
-    public Director(String dirApellidos, String dirNombres, boolean dirEstado, Set pelDirs) {
-        this.dirApellidos = dirApellidos;
-        this.dirNombres = dirNombres;
+    public Director(String dirApellido, String dirNombre, boolean dirEstado, Set pelDirs) {
+        this.dirApellido = dirApellido;
+        this.dirNombre = dirNombre;
         this.dirEstado = dirEstado;
         this.pelDirs = pelDirs;
     }
@@ -45,20 +45,20 @@ public class Director implements Serializable {
         this.dirCodigo = dirCodigo;
     }
 
-    public String getDirApellidos() {
-        return dirApellidos;
+    public String getDirApellido() {
+        return dirApellido;
     }
 
-    public void setDirApellidos(String dirApellidos) {
-        this.dirApellidos = dirApellidos;
+    public void setDirApellido(String dirApellido) {
+        this.dirApellido = dirApellido;
     }
 
-    public String getDirNombres() {
-        return dirNombres;
+    public String getDirNombre() {
+        return dirNombre;
     }
 
-    public void setDirNombres(String dirNombres) {
-        this.dirNombres = dirNombres;
+    public void setDirNombre(String dirNombre) {
+        this.dirNombre = dirNombre;
     }
 
     public boolean isDirEstado() {

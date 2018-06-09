@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.Salas" table="salas" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.Sala" table="salas" catalog="cine" optimistic-lock="version">
         <id name="salCodigo" type="java.lang.Integer">
             <column name="sal_codigo" />
             <generator class="identity" />
@@ -17,17 +17,17 @@
         <property name="salEstado" type="boolean">
             <column name="sal_estado" not-null="true" />
         </property>
-        <set name="butacases" table="butacas" inverse="true" lazy="true" fetch="select">
+        <set name="butacases" table="butacas" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="but_sala" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.Butacas" />
+            <one-to-many class="aplicacion.modelo.dominio.Butaca" />
         </set>
-        <set name="cartelerases" table="carteleras" inverse="true" lazy="true" fetch="select">
+        <set name="cartelerases" table="carteleras" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="car_sala" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.Carteleras" />
+            <one-to-many class="aplicacion.modelo.dominio.Cartelera" />
         </set>
     </class>
 </hibernate-mapping>

@@ -3,12 +3,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.ButacasCarteleras" table="butacas_carteleras" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.ButacaCartelera" table="butacas_carteleras" catalog="cine" optimistic-lock="version">
         <id name="bcCodigo" type="java.lang.Integer">
             <column name="bc_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="carteleras" class="aplicacion.datos.hibernate.mapeos.Carteleras" fetch="select">
+        <many-to-one name="cartelera" class="aplicacion.modelo.dominio.Cartelera" fetch="join         
             <column name="bc_cartelera" not-null="true" />
         </many-to-one>
         <property name="bcIdentificadorButaca" type="string">
@@ -20,11 +20,11 @@
         <property name="bcEstado" type="boolean">
             <column name="bc_estado" not-null="true" />
         </property>
-        <set name="ventasEntradases" table="ventas_entradas" inverse="true" lazy="true" fetch="select">
+        <set name="ventasEntradases" table="ventas_entradas" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="ven_butaca" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.VentasEntradas" />
+            <one-to-many class="aplicacion.modelo.dominio.VentaEntradas" />
         </set>
     </class>
 </hibernate-mapping>

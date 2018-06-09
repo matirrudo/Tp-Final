@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.Peliculas" table="peliculas" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.Pelicula" table="peliculas" catalog="cine" optimistic-lock="version">
         <id name="pelCodigo" type="java.lang.Integer">
             <column name="pel_codigo" />
             <generator class="identity" />
@@ -17,23 +17,23 @@
         <property name="pelEstado" type="boolean">
             <column name="pel_estado" not-null="true" />
         </property>
-        <set name="pelDirs" table="pel_dir" inverse="true" lazy="true" fetch="select">
+        <set name="pelDirs" table="pel_dir" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="pd_pelicula" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.PelDir" />
+            <one-to-many class="aplicacion.modelo.dominio.PelDir" />
         </set>
-        <set name="cartelerases" table="carteleras" inverse="true" lazy="true" fetch="select">
+        <set name="cartelerases" table="carteleras" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="car_pelicula" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.Carteleras" />
+            <one-to-many class="aplicacion.modelo.dominio.Cartelera" />
         </set>
-        <set name="pelClas" table="pel_cla" inverse="true" lazy="true" fetch="select">
+        <set name="pelClas" table="pel_cla" inverse="true" lazy="true" fetch="join">
             <key>
                 <column name="pc_pelicula" not-null="true" />
             </key>
-            <one-to-many class="aplicacion.datos.hibernate.mapeos.PelCla" />
+            <one-to-many class="aplicacion.modelo.dominio.PelCla" />
         </set>
     </class>
 </hibernate-mapping>

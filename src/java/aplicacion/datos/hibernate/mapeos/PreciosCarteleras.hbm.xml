@@ -3,12 +3,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 07/06/2018 16:44:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="aplicacion.datos.hibernate.mapeos.PreciosCarteleras" table="precios_carteleras" catalog="cine" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.PrecioCartelera" table="precios_carteleras" catalog="cine" optimistic-lock="version">
         <id name="preCodigo" type="java.lang.Integer">
             <column name="pre_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="carteleras" class="aplicacion.datos.hibernate.mapeos.Carteleras" fetch="select">
+        <many-to-one name="cartelera" class="aplicacion.modelo.dominio.PrecioCartelera" fetch="join">
             <column name="pre_cartelera" not-null="true" />
         </many-to-one>
         <property name="preDescripcion" type="string">

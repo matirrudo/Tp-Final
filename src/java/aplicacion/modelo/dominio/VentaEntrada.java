@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  * @author LENOVO
  */
-public class VentaEntradas implements Serializable{
+public class VentaEntrada implements Serializable{
     
      private Integer venCodigo;
      private ButacaCartelera butacasCartelera;
@@ -17,10 +17,10 @@ public class VentaEntradas implements Serializable{
      private String venDescripcion;
      private boolean venEstado;
 
-    public VentaEntradas() {
+    public VentaEntrada() {
     }
 
-    public VentaEntradas(ButacaCartelera butacasCartelera, Perfil perfil, String venPrecio, String venDescripcion, boolean venEstado) {
+    public VentaEntrada(ButacaCartelera butacasCartelera, Perfil perfil, String venPrecio, String venDescripcion, boolean venEstado) {
         
         this.butacasCartelera = butacasCartelera;
         this.perfil = perfil;
