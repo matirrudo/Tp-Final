@@ -1,7 +1,7 @@
 
 #top {
     position: relative;
-    background-color: #036fab;
+    background-color: #000045;
     color: white;
     padding: 5px;
     margin: 0px 0px 10px 0px;
@@ -9,9 +9,16 @@
 
 #bottom {
     position: relative;
-    background-color: #c2dfef;
+    background-color: #045491;
     padding: 5px;
     margin: 10px 0px 0px 0px;
+}
+#contenedor{
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.7);
+    margin: 0 auto; /*esto hace que el contenedor de centre verticalmente*/
+    padding: 2px;
+    text-align: left;
+    width: 960px;
 }
 
 #left {
@@ -58,4 +65,25 @@
   text-decoration : underline;
 }
 
+#tooplate_main{
+    background: url(../images/tooplate_middle4.png) ;
+    background-color: white;
+    clear: both;
+    height: 600px;
+    margin: 0 auto;
+    padding: 10px 40px 0;
+}
 
+#tooplate_header{
+    background: url(../images/toolplate_header1.jpg) ;
+    height: 111px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+#tooplate_middle{
+    
+    clear: both;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0px 0px;  
+}
