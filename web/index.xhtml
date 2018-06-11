@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="resources/css/loginInicio.css"/>
+        <title>Sistema al Cine</title>
+    </h:head>
+    <h:body>
+        <div class="conteiner">
+            <center>
+            <h:form id="frmLogin">
+                <p:growl id="mensaje01" showDetail="false"  sticky="false"/>
+                <p:panel id="pnlLogin" style="width: 600px;" header="Acceso al Sistema del Cine" footer="Programacion Visual - Grupo 8">
+                    <h:panelGrid columns="2">
+                        <p:outputLabel value="Ingrese Nombre Usuario  " for="txtNombreUsuario"/>
+                        <p:inputText id="txtNombreUsuario" value="" required="true"
+                                     requiredMessage="Ingrese usuario"/>
+                    <p:outputLabel value="Ingrese Password  " for="txtPassword"/>
+                    <p:password id="txtPassword" value="" required="true"
+                                requiredMessage="Ingrese contraseña"/>
+                    <h:panelGroup/>
+                    <p:commandButton id="btnValidar" value="Validar" icon="ui-icon-key" update="frmLogin" />
+                </h:panelGrid>
+                </p:panel>
+            </h:form>
+                </center>
+        </div>
+    </h:body>
+</html>
+
