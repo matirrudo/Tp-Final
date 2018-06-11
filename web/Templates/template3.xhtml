@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>MENU</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="contenedor">
+            <div id="top">
+                <ui:insert name="top">
+                    <div id="tooplate_header">
+                        <div id="titulo">
+                            <center><h1>BIENVENIDO A CINE</h1></center>
+                        </div>
+
+                    </div> 
+                    <div id="tooplate_middle">
+
+                        <h:form rendered="#{loginFormBeans.verificarSesion()}">
+                            <p:menubar >
+
+                                <p:menuitem value="Peliculas"/>
+                                <p:menuitem value="Horarios"/>  
+                                <p:menuitem value="Estrenos"/> 
+
+                                <f:facet name="options">
+                                    <p:outputLabel value="Usuario Conectado: #{loginFormBeans.mostrarUsuarioValidado()}"/>
+                                    <p:commandButton value="Cerrar Sesion" 
+                                                     action="#{loginFormBeans.cerrarSesion()}"/>
+                                </f:facet>
+                            </p:menubar>    
+                        </h:form>
+
+
+                    </div>
+                </ui:insert>
+            </div>
+
+            <div id="content" class="center_content">
+                <ui:insert name="content">
+
+                </ui:insert>
+            </div>
+
+            <div id="bottom">
+                <ui:insert name="bottom">
+                    <hr><center>PROGRAMACION VISUAL</center></hr>
+                </ui:insert>
+            </div>
+        </div>  
+
+
+    </h:body>
+
+</html>

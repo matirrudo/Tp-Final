@@ -1,22 +1,54 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aplicacion.datos.hibernate.dao.imp;
 
 import aplicacion.datos.hibernate.dao.IUsuarioDao;
 import aplicacion.modelo.dominio.Usuario;
+import aplicacion.modelo.util.ListadoUsuarios;
 
 /**
  *
- * @author LENOVO
+ * @author GRUPO8
  */
-public class UsuarioDAOImp implements IUsuarioDao{
+public class UsuarioDAOImp implements IUsuarioDao {
 
     @Override
     public Usuario validarUsuario(String nombreUsuario, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Usuario u = null;
+        boolean encontrado = false;
+        for (int i = 0; i < ListadoUsuarios.listadoUsuarios.length && encontrado != true; i++) {
+            Usuario usuarioListado = ListadoUsuarios.listadoUsuarios[i];
+            if (usuarioListado != null && usuarioListado.getUsuNombreUsuario().equals(nombreUsuario)
+                    && usuarioListado.getUsuPassword().equals(password)) {
+                u = usuarioListado;
+                encontrado = true;
+            }
+        }
+        return u;
     }
-    
+
+    @Override
+    public void modificarUsuario(Usuario modUsuario) {
+        boolean encontrado = false;
+        for (int i = 0; i < ListadoUsuarios.listadoUsuarios.length && encontrado != true; i++) {
+            Usuario usuarioListado = ListadoUsuarios.listadoUsuarios[i];
+            if (usuarioListado.getUsuNombreUsuario().equals(modUsuario.getUsuNombreUsuario())) {
+                ListadoUsuarios.listadoUsuarios[i] = modUsuario;
+                encontrado = true;
+            }
+        }
+    }
+
+    @Override
+    public Usuario obtenerUsuario(String nombreUsuario) {
+        Usuario u = null;
+        boolean encontrado = false;
+        for (int i = 0; i < ListadoUsuarios.listadoUsuarios.length && encontrado != true; i++) {
+            Usuario usuarioListado = ListadoUsuarios.listadoUsuarios[i];
+            if (usuarioListado != null && usuarioListado.getUsuNombreUsuario().equals(nombreUsuario)) {
+                u = usuarioListado;
+                encontrado = true;
+            }
+        }
+        return u;
+    }
+
 }
