@@ -22,7 +22,7 @@ public class Perfil implements Serializable{
     public Perfil() {
     }
 
-    public Perfil(Integer perCodigo, Usuario usuario, String perNombre, String perApellido, String perDni, Date perFechaNac, String perEmail, String perDireccion, boolean perEstado) {
+    public Perfil(Usuario usuario, String perNombre, String perApellido, String perDni, Date perFechaNac, String perEmail, String perDireccion, boolean perEstado) {
         this.perCodigo = perCodigo;
         this.usuario = usuario;
         this.perNombre = perNombre;
