@@ -14,7 +14,7 @@
         <property name="claEstado" type="boolean">
             <column name="cla_estado" not-null="true" />
         </property>
-        <set name="pelClas" table="pel_cla" inverse="true" lazy="true" fetch="join
+        <set name="pelClas" table="pel_cla" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="pc_clasificacion" not-null="true" />
             </key>

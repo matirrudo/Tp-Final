@@ -8,7 +8,7 @@
             <column name="pc_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="clasificacion" class="aplicacion.modelo.dominio.Clasificacion" fetch="join">
+        <many-to-one name="clasificacion" class="aplicacion.modelo.dominio.Clasificacion" fetch="join"> 
             <column name="pc_clasificacion" not-null="true" />
         </many-to-one>
         <many-to-one name="pelicula" class="aplicacion.modelo.dominio.Pelicula" fetch="join">

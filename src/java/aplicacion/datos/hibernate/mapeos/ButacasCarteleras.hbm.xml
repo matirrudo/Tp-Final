@@ -8,7 +8,7 @@
             <column name="bc_codigo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cartelera" class="aplicacion.modelo.dominio.Cartelera" fetch="join         
+        <many-to-one name="cartelera" class="aplicacion.modelo.dominio.Cartelera" fetch="join">       
             <column name="bc_cartelera" not-null="true" />
         </many-to-one>
         <property name="bcIdentificadorButaca" type="string">
@@ -20,7 +20,7 @@
         <property name="bcEstado" type="boolean">
             <column name="bc_estado" not-null="true" />
         </property>
-        <set name="ventasEntradases" table="ventas_entradas" inverse="true" lazy="true" fetch="join">
+        <set name="ventasEntradases" table="ventas_entradas" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ven_butaca" not-null="true" />
             </key>
